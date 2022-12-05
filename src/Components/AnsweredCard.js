@@ -1,4 +1,6 @@
-export default function AnsweredCard({ index, cards, setCards, counter, setCounter }) {
+import { AnswerButton } from "../Styles/FlashCardStyles";
+
+export default function AnsweredCard({ index, cards, setCards, counter, setCounter}) {
     function answerCard(answer) {
         setCards(cards.map((c, i) => {
             if (index === i)
@@ -14,11 +16,11 @@ export default function AnsweredCard({ index, cards, setCards, counter, setCount
 
     return (
         <>
-            <p>{cards[index].answer}</p>
-            <div className="escolha-resposta">
-                <button className="vermelho" onClick={() => answerCard("nao-lembrei") }>Não lembrei</button>
-                <button className="laranja" onClick={() => answerCard("quase-lembrei") }>Quase não lembrei</button>
-                <button className="verde" onClick={() => answerCard("zap") }>Zap!</button>
+            <p data-test="flashcard-text">{cards[index].answer}</p>
+            <div>
+                <AnswerButton color="#FF3030" onClick={() => answerCard("erro") } data-test="no-btn" >Não lembrei</AnswerButton>
+                <AnswerButton color="#FF922E" onClick={() => answerCard("quase") } data-test="partial-btn" >Quase não lembrei</AnswerButton>
+                <AnswerButton color="#2FBE34" onClick={() => answerCard("zap") } data-test="zap-btn" >Zap!</AnswerButton>
             </div>
         </>
     );

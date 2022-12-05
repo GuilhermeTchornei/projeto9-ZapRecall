@@ -2,6 +2,9 @@ import { useState } from "react";
 import FlashCard from "./FlashCard";
 import cardsList from "./cardsList"
 import Counter from "./Counter"
+import logo from "../assets/logo.png";
+import styled from 'styled-components';
+import { LogoContainer, ScreenContainer, FooterConcluidos } from "../Styles/MainScreenStyles";
 
 export default function MainScreen() {
     const [cards, setCards] = useState(cardsList.map((c) => {
@@ -18,15 +21,15 @@ export default function MainScreen() {
 
 
     return (
-        <div className="screen-container">
-            <header className="logo-container">
-                <img src="./assets/logo.png"></img>
+        <ScreenContainer>
+            <LogoContainer>
+                <img src={logo}></img>
                 <h1>ZapRecall</h1>
-            </header>
+            </LogoContainer>
             <FlashCard cards={cards} setCards={(cards) => setCards(cards)} counter={counter} setCounter={(c) => setCounter(c)} />
-            <footer className="footer-concluidos">
+            <FooterConcluidos>
                 <Counter counter={counter} cardsCount={cards.length} />
-            </footer>
-        </div>
+            </FooterConcluidos>
+        </ScreenContainer>
     );
 }
