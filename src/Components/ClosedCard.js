@@ -19,26 +19,26 @@ export default function ClosedCard({ index, cards, setCards}) {
     let color;
     let decoration = "none";
     let img = setaPlay;
-    let dataTest = `data-test="play-btn"`;
+    let dataTest = `play-btn`;
     switch (cards[index].userAnswer)
     {
         case 'erro':
             color = "#FF3030";
             img = iconeErrado;
             decoration = "line-through";
-            dataTest = `data-test="no-icon"`;
+            dataTest = `no-icon`;
             break;
         case 'quase':
             color = "#FF922E";
             img = iconeQuase;
             decoration = "line-through";
-            dataTest = `data-test="patial-icon"`;
+            dataTest = `partial-icon`;
             break;
         case 'zap':
             color = "#2FBE34";
             img = iconeCerto;
             decoration = "line-through";
-            dataTest = `data-test="zap-icon"`;
+            dataTest = `zap-icon`;
             break;
     };
 
