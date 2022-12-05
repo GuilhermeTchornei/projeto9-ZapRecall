@@ -32,7 +32,7 @@ export const LogoContainer = styled.div`
 `;
 
 
-export const FooterConcluidos = styled.div`
+export const FooterConcluidos = styled.footer`
     width: 100%;
     min-height: 50px;
     background-color: #FFFFFF;

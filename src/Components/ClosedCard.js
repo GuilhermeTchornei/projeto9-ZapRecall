@@ -46,7 +46,7 @@ export default function ClosedCard({ index, cards, setCards}) {
     return (
         <ClosedQuestion color={color} decoration={decoration} data-test="flashcard">
             <p className={cards[index].userAnswer} data-test="flashcard-text">Pergunta {index + 1}</p>
-            <img src={img} onClick={() => img === setaPlay && openCard()} data-test="play-btn"></img>
+            <img src={img} onClick={() => img === setaPlay && openCard()} data-test={dataTest}></img>
         </ClosedQuestion>
     )
 }

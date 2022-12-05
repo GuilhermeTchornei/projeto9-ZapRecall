@@ -27,7 +27,7 @@ export default function MainScreen() {
                 <h1>ZapRecall</h1>
             </LogoContainer>
             <FlashCard cards={cards} setCards={(cards) => setCards(cards)} counter={counter} setCounter={(c) => setCounter(c)} />
-            <FooterConcluidos>
+            <FooterConcluidos data-test="footer">
                 <Counter counter={counter} cardsCount={cards.length} />
             </FooterConcluidos>
         </ScreenContainer>
